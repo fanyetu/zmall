@@ -26,7 +26,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
+			<artifactId>spring-cloud-starter-consul-all</artifactId>
             <exclusions>
                 <exclusion>
                     <artifactId>guava</artifactId>

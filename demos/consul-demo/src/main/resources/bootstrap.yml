@@ -5,3 +5,5 @@ spring:
     consul:
       host: localhost
       port: 8500
+      config:
+        format: yaml
