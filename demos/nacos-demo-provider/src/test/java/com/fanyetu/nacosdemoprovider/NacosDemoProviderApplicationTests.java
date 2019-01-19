@@ -1,4 +1,4 @@
-package com.fanyetu.nacosdemo;
+package com.fanyetu.nacosdemoprovider;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class NacosDemoApplicationTests {
+public class NacosDemoProviderApplicationTests {
 
     @Test
     public void contextLoads() {

@@ -9,15 +9,14 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.fanyetu</groupId>
-    <artifactId>nacos-demo</artifactId>
+    <artifactId>nacos-demo-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>nacos-demo</name>
+    <name>nacos-demo-provider</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.RC2</spring-cloud.version>
-        <nacos.version>0.2.1.RELEASE</nacos.version>
     </properties>
 
     <dependencies>
@@ -29,11 +28,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>${nacos.version}</version>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>0.2.1.RELEASE</version>
         </dependency>
 
         <dependency>
