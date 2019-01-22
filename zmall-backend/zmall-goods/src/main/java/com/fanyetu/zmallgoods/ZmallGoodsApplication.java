@@ -3,6 +3,7 @@ package com.fanyetu.zmallgoods;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * 商品模块
@@ -12,6 +13,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@MapperScan(basePackages = "com.fanyetu.zmallgoods.mapper")
 public class ZmallGoodsApplication {
 
     public static void main(String[] args) {

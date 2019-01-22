@@ -6,4 +6,4 @@ spring:
       discovery:
         server-addr: ${spring.cloud.nacos.config.server-addr}
   application:
-    name: zmall-user
+    name: zmall-goods

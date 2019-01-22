@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fanyetu.zmallgoods.mapper.GoodsCategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.fanyetu.zmallgoods.model.GoodsCategory" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="parent_id" property="parentId" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="level" property="level" jdbcType="INTEGER" />
+    <result column="product_count" property="productCount" jdbcType="INTEGER" />
+    <result column="product_unit" property="productUnit" jdbcType="VARCHAR" />
+    <result column="nav_status" property="navStatus" jdbcType="INTEGER" />
+    <result column="show_status" property="showStatus" jdbcType="INTEGER" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="keywords" property="keywords" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="LONGVARCHAR" />
+  </resultMap>
+</mapper>
