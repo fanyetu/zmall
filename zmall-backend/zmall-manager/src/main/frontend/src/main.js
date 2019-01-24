@@ -1,5 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+// 使用vuetify套件
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 
