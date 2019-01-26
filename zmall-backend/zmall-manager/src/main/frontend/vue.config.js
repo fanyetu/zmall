@@ -4,7 +4,7 @@ module.exports = {
         port: 9998,
         // 配置开发环境的代理，打包后前端工程会直接成为后端的resource
         proxy: {
-            '/': {
+            '/api/': {
                 target: 'http://localhost:8080',
                 changeOrigin: false,
                 ws: false

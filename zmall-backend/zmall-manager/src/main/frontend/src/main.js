@@ -1,13 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vue from "vue";
+import './plugins/vuetify'
+import App from "./App.vue";
+import router from "./router/";
+import store from "./store";
+import "./registerServiceWorker";
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import 'font-awesome/css/font-awesome.css'
 
-// 使用vuetify套件
-Vue.use(Vuetify)
-
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  store,
+  render: h => h(App)
+}).$mount("#app");
