@@ -2,6 +2,8 @@ package com.fanyetu.zmallmanager.auth.custom;
 
 import com.fanyetu.common.result.Result;
 import com.fanyetu.common.result.ResultGenerator;
+import com.fanyetu.common.utils.HttpResponseUtil;
+import com.fanyetu.common.utils.JacksonUtil;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -37,6 +39,6 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
             result = ResultGenerator.getUnauthorizedResult("登录失败!");
         }
 
-//        HttpResponseUtil.writeUnauthorizedJson(response, JacksonUtil.objectToJSON(result));
+        HttpResponseUtil.writeUnauthorizedJson(response, JacksonUtil.objectToJSON(result));
     }
 }

@@ -3,6 +3,8 @@ package com.fanyetu.zmallmanager.auth.custom;
 import com.fanyetu.common.result.Result;
 import com.fanyetu.common.result.ResultCode;
 import com.fanyetu.common.result.ResultGenerator;
+import com.fanyetu.common.utils.HttpResponseUtil;
+import com.fanyetu.common.utils.JacksonUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
@@ -25,6 +27,6 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
                        AccessDeniedException accessDeniedException) throws IOException, ServletException {
         Result result = ResultGenerator.genResult(ResultCode.FORBIDDEN, "权限不足，请联系管理员");
         response.setStatus(HttpStatus.FORBIDDEN.value());
-//        HttpResponseUtil.writeJson(response, JacksonUtil.objectToJSON(result));
+        HttpResponseUtil.writeJson(response, JacksonUtil.objectToJSON(result));
     }
 }

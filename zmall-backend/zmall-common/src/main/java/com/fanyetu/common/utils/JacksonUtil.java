@@ -1,11 +1,14 @@
 package com.fanyetu.common.utils;
 
+import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.xml.internal.ws.developer.SerializationFeature;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,14 +24,14 @@ import java.util.Map;
  */
 public class JacksonUtil {
 
-    /*private static final Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
+    private static final Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     static {
-        *//**
+        /**
          * 默认非空不输出，时间格式
-         *//*
+         */
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS,false);
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
@@ -37,12 +40,12 @@ public class JacksonUtil {
 //		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
     }
 
-    *//**
+    /**
      * Object对像转换成JSON
      *
      * @param obj
      * @return String
-     *//*
+     */
     public static String objectToJSON(Object obj) {
         if (obj != null) {
             try {
@@ -55,14 +58,14 @@ public class JacksonUtil {
         return null;
     }
 
-    *//**
+    /**
      * json字符串转换成JavaBean对象
      *
      * @param <T>
      * @param jsonStr
      * @param clazz
      * @return
-     *//*
+     */
     public static <T> T jsonToEntity(String jsonStr, Class<T> clazz) {
         try {
             return JSONToObject(jsonStr, clazz);
@@ -72,13 +75,13 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * inputstream转成javaBean
      * @param inputStream
      * @param clazz
      * @param <T>
      * @return
-     *//*
+     */
     public static <T> T jsonToEntity(InputStream inputStream, Class<T> clazz){
         try {
             return JSONToObject(inputStream,clazz);
@@ -88,12 +91,12 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * json字符串转换Map集合
      *
      * @param jsonStr
      * @return
-     *//*
+     */
     @SuppressWarnings("unchecked")
     public static Map<String, Object> jsonToMap(String jsonStr) {
         try {
@@ -104,11 +107,11 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * InputStream 转 map
      * @param inputStream
      * @return
-     *//*
+     */
     public static Map<String,Object> jsonToMap(InputStream inputStream){
         try {
             return JSONToObject(inputStream,Map.class);
@@ -118,12 +121,12 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * json字符串转换成list<T>
      *
      * @param jsonStr
      * @return
-     *//*
+     */
     public static List<?> jsonToList(String jsonStr) {
         try {
             return JSONToObject(jsonStr, List.class);
@@ -133,14 +136,14 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * json字符串转换成list<T>,T复杂对象
      *
      * @param jsonStr
      * @param elementClasses
      *            list元素类型
      * @return
-     *//*
+     */
     public static List<?> jsonToList(String jsonStr, Class<?> elementClasses) {
         try {
             JavaType javaType = getCollectionType(List.class, elementClasses);
@@ -151,7 +154,7 @@ public class JacksonUtil {
         }
     }
 
-    *//**
+    /**
      * json字符串转换成map<K,V>,K/V复杂对象
      *
      * @param jsonStr
@@ -160,7 +163,7 @@ public class JacksonUtil {
      * @param elementClasses
      *            V类型
      * @return
-     *//*
+     */
     public static Map<?, ?> jsonToMap(String jsonStr, Class<?> keyClasses, Class<?> elementClasses) {
         try {
             JavaType javaType = getCollectionType(Map.class, keyClasses, elementClasses);
@@ -187,12 +190,12 @@ public class JacksonUtil {
                 elementClasses);
     }
 
-    *//**
+    /**
      * 附件id转换List
      *
      * @param fileIdsStr
      * @return List
-     *//*
+     */
     public static List<String> jsonFileIdsToList(String fileIdsStr) {
         if(StrUtil.isEmpty(fileIdsStr) || fileIdsStr.split(",").length==0){
             return Collections.emptyList();
@@ -204,9 +207,9 @@ public class JacksonUtil {
         return fileIds;
     }
 
-    *//**
+    /**
      * 转换失败抛出异常
-     *//*
+     */
     public static class JacksonException extends RuntimeException{
         public JacksonException() {
         }
@@ -227,6 +230,6 @@ public class JacksonUtil {
                                 boolean writableStackTrace) {
             super(message, cause, enableSuppression, writableStackTrace);
         }
-    }*/
+    }
 
 }
