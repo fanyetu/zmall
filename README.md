@@ -1,1 +1,1 @@
-﻿# ZMALL## 后端使用技术- Spring Boot- MyBatis- Hibernate Validator- Spring cloud     - nacos    - Loadbalancer- ZooKeeper- MySQL- Mycat- Redis- Elasticsearch- RocketMQ- Druid
+﻿# ZMALL## 后端使用技术- Spring Boot- MyBatis- Hibernate Validator- Fluent Validator- Spring cloud     - nacos    - Ribbon    - Feign    - gateway- MySQL- Redis- Elasticsearch- RocketMQ## 前端使用技术- VueJS- vue-router- vuex- axios- Vuetify## 启动
